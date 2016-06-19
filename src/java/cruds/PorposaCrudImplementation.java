@@ -47,13 +47,13 @@ return flag;
     public ArrayList<Porposa> selectPorposeHQL(int id) {
 
         Session sc = SessionCreation.getSessionFactory().openSession();
-        ArrayList<Porposa> porposas = new ArrayList<>();
+        List<Porposa> porposas = new ArrayList<>();
 
         try {
             sc.beginTransaction();
-            Criteria cr = sc.createCriteria(Users.class);
+            Criteria cr = sc.createCriteria(Porposa.class);
             cr.add(Restrictions.eq("projectsforusers.projectId", id));
-            porposas = (ArrayList<Porposa>) cr.list();
+            porposas = cr.list();
             sc.getTransaction().commit();
         } catch (HibernateException e) {
             e.printStackTrace();
@@ -61,7 +61,7 @@ return flag;
             sc.close();
         }
 
-        return porposas;
+        return (ArrayList<Porposa>) porposas;
 
     }
     @Override

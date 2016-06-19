@@ -5,12 +5,12 @@
  */
 package webservice;
 
-import businesslayer.businesslogic.DetailsDelegation;
-import businesslayer.businesslogic.PorposaDelegation;
-import businesslayer.businesslogic.ProjectDelegation;
-import businesslayer.businesslogicinterface.DetailsDelegationInt;
-import businesslayer.businesslogicinterface.PorposaDelegationInt;
-import businesslayer.businesslogicinterface.ProjectDelegationInt;
+import businesslogic.DetailsDelegation;
+import businesslogic.PorposaDelegation;
+import businesslogic.ProjectDelegation;
+import businesslogicinterface.DetailsDelegationInt;
+import businesslogicinterface.PorposaDelegationInt;
+import businesslogicinterface.ProjectDelegationInt;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import java.util.HashMap;
@@ -29,7 +29,7 @@ import pojos.Porposa;
  */
 @Path("/status")
 public class Status {
-    
+
     @GET
     @Path("/updateStatus")
     public Response selectUser(@QueryParam("porposa") int porposa, @QueryParam("project") int project) throws Exception {
@@ -39,8 +39,8 @@ public class Status {
         DetailsDelegationInt delegationInt1 = new DetailsDelegation();
         ProjectDelegationInt delegationInt2 = new ProjectDelegation();
         Details details = new Details();
-       DetailsId dId = new DetailsId(porposa,project);
-       details.setId(dId);
+        DetailsId dId = new DetailsId(porposa, project);
+        details.setId(dId);
         details.setPorposa(porposa1);
         details.setProjectsforusers(delegationInt2.delegateSelect(project));
         details.setStatusOfProjects("running");
@@ -51,7 +51,8 @@ public class Status {
         map.put("satatus", test);
         return Response.status(200).entity(g.toJson(map)).build();
     }
-     @GET
+
+    @GET
     @Path("/updateRefuseStatus")
     public Response refuseUser(@QueryParam("porposa") int porposa, @QueryParam("project") int project) throws Exception {
         PorposaDelegationInt delegationInt = new PorposaDelegation();
@@ -60,8 +61,8 @@ public class Status {
         DetailsDelegationInt delegationInt1 = new DetailsDelegation();
         ProjectDelegationInt delegationInt2 = new ProjectDelegation();
         Details details = new Details();
-       DetailsId dId = new DetailsId(porposa,project);
-       details.setId(dId);
+        DetailsId dId = new DetailsId(porposa, project);
+        details.setId(dId);
         details.setPorposa(porposa1);
         details.setProjectsforusers(delegationInt2.delegateSelect(project));
         details.setStatusOfProjects("running");

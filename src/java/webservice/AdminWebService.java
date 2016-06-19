@@ -5,12 +5,12 @@
  */
 package webservice;
 
-import businesslayer.businesslogic.AdminDelegation;
-import businesslayer.businesslogic.ProjectDelegation;
-import businesslayer.businesslogic.UsersDelegation;
-import businesslayer.businesslogicinterface.AdminDelegationInt;
-import businesslayer.businesslogicinterface.ProjectDelegationInt;
-import businesslayer.businesslogicinterface.UsersDelegationInt;
+import businesslogic.AdminDelegation;
+import businesslogic.ProjectDelegation;
+import businesslogic.UsersDelegation;
+import businesslogicinterface.AdminDelegationInt;
+import businesslogicinterface.ProjectDelegationInt;
+import businesslogicinterface.UsersDelegationInt;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import java.util.ArrayList;
@@ -19,11 +19,9 @@ import java.util.Map;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
-import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.core.Response;
 import pojos.Admin;
-import pojos.Projectsforusers;
 import pojos.Users;
 import static webservice.ProjectWebService.ProjectsForUser;
 

@@ -5,15 +5,14 @@
  */
 package webservice;
 
-import businesslayer.businesslogic.CategoryDelegation;
-import businesslayer.businesslogic.PortofolioforuserDelegation;
-import businesslayer.businesslogic.UsersDelegation;
-import businesslayer.businesslogicinterface.CategoryDelegationInt;
-import businesslayer.businesslogicinterface.PortofolioforuserDelegationInt;
-import businesslayer.businesslogicinterface.UsersDelegationInt;
+import businesslogic.CategoryDelegation;
+import businesslogic.PortofolioforuserDelegation;
+import businesslogic.UsersDelegation;
+import businesslogicinterface.CategoryDelegationInt;
+import businesslogicinterface.PortofolioforuserDelegationInt;
+import businesslogicinterface.UsersDelegationInt;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;

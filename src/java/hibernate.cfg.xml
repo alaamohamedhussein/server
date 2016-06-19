@@ -6,7 +6,7 @@
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/itiproject?useUnicode=true&amp;characterEncoding=UTF-8</property>
     <property name="hibernate.connection.username">root</property>
-    <property name="hibernate.connection.password">root</property>
+    <property name="hibernate.connection.password">iti</property>
     <mapping resource="pojos/Comments.hbm.xml"/>
     <mapping resource="pojos/Admin.hbm.xml"/>
     <mapping resource="pojos/Users.hbm.xml"/>

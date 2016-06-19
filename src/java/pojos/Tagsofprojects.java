@@ -1,6 +1,7 @@
 package pojos;
 // Generated Jun 2, 2016 7:43:06 PM by Hibernate Tools 4.3.1
 
+import com.google.gson.annotations.Expose;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -21,9 +22,10 @@ import org.hibernate.annotations.Parameter;
 @Table(name = "tagsofprojects", catalog = "itiproject"
 )
 public class Tagsofprojects implements java.io.Serializable {
-
+    @Expose
     private int tagId;
     private Projectsforusers projectsforusers;
+    @Expose
     private Tags tags;
 
     public Tagsofprojects() {

@@ -5,10 +5,10 @@
  */
 package webservice;
 
-import businesslayer.businesslogic.PorposaDelegation;
-import businesslayer.businesslogic.ProjectDelegation;
-import businesslayer.businesslogicinterface.PorposaDelegationInt;
-import businesslayer.businesslogicinterface.ProjectDelegationInt;
+import businesslogic.PorposaDelegation;
+import businesslogic.ProjectDelegation;
+import businesslogicinterface.PorposaDelegationInt;
+import businesslogicinterface.ProjectDelegationInt;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import java.sql.Date;
@@ -22,7 +22,6 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.core.Response;
 import org.codehaus.jettison.json.JSONObject;
-import pojos.Category;
 import pojos.Projectsforusers;
 
 /**
@@ -113,6 +112,20 @@ public static  ArrayList<Projectsforusers> ProjectsForUser =new ArrayList<>();
      System.out.println(out);
         return Response.status(200).entity(g.toJson(map)).build();
     }
-    
+     @POST
+    @Path("/getproject")
+     public Response selectProject(MultivaluedMap<String, String> val) throws Exception {
+        System.out.println("in web service mona");
+        int id=Integer.parseInt(val.getFirst("pId"));
+        ProjectDelegationInt delegationInt = new ProjectDelegation();
+       Projectsforusers project=delegationInt.delegateSelect(id);
+      Gson g = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().create();      
+     String out=g.toJson(project);
+      Map<String, Object> map =new HashMap();
+      map.put("satatus", true);
+      map.put("project", project);    
+     System.out.println(out);
+        return Response.status(200).entity(g.toJson(map)).build();
+    }
      
 }

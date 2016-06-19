@@ -5,33 +5,9 @@
  */
 package test;
 
-import businesslayer.businesslogic.PhoneofuserDelegation;
-import businesslayer.businesslogic.SkilltableDelegation;
-import businesslayer.businesslogicinterface.PhoneofuserDelegationInt;
-import businesslayer.businesslogic.UsersDelegation;
-import businesslayer.businesslogicinterface.SkilltableDelegationInt;
-import businesslayer.businesslogicinterface.UsersDelegationInt;
-import businesslayer.bussiness.ReturnList;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import cruds.ProjectCrudImplementation;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import pojos.Category;
-import pojos.Details;
-import pojos.DetailsId;
-import pojos.Phoneofuser;
-import pojos.Porposa;
 import pojos.Projectsforusers;
-import pojos.Projectsimages;
-import pojos.Skilltable;
-import pojos.Tagsofprojects;
-import pojos.Tags;
-import pojos.Users;
 
 /**
  *

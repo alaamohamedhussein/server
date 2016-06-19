@@ -10,17 +10,21 @@ import javax.ws.rs.core.Response;
 import org.apache.commons.codec.binary.Base64;
 
 
+
  
 @Path("/hassan")
 public class HelloWorldService {
+    public static int i=0;
         @POST
         @Path("/mona")
         public Response postMsg2(MultivaluedMap <String,String> val) {
-       String fileName=val.getFirst("fileName")+2;
-       System.out.println("mona");
-       String filePath = "C:\\Users\\m@pc\\Documents\\NetBeansProjects\\itiProjectServer\\web\\WEB-INF\\images\\" + fileName;
+       String fileName = val.getFirst("name");
+        
+      i=i++;
+      String filePath = "C:\\Users\\m@pc\\Documents\\NetBeansProjects\\itiProjectServer\\web\\image\\User\\" + (i++)+fileName;
+       String path="http://localhost:8084/itiProject/image/user/"+(i)+fileName;
         try{
-         byte[] imageByteArray = decodeImage(val.getFirst("image"));
+         byte[] imageByteArray = decodeImage(val.getFirst("content"));
  
             // Write a image byte array into file system
             FileOutputStream imageOutFile = new FileOutputStream( filePath);

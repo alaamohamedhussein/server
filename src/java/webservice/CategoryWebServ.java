@@ -5,8 +5,8 @@
  */
 package webservice;
 
-import businesslayer.businesslogic.CategoryDelegation;
-import businesslayer.businesslogicinterface.CategoryDelegationInt;
+import businesslogic.CategoryDelegation;
+import businesslogicinterface.CategoryDelegationInt;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import java.util.ArrayList;
@@ -16,9 +16,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Response;
-import org.codehaus.jettison.json.JSONObject;
 import pojos.Category;
-import pojos.Skilltable;
 
 /**
  *

@@ -5,10 +5,8 @@
  */
 package webservice;
 
-import businesslayer.businesslogic.PorposaDelegation;
-import businesslayer.businesslogic.UsersDelegation;
-import businesslayer.businesslogicinterface.PorposaDelegationInt;
-import businesslayer.businesslogicinterface.UsersDelegationInt;
+import businesslogic.PorposaDelegation;
+import businesslogicinterface.PorposaDelegationInt;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import java.util.ArrayList;
@@ -29,17 +27,18 @@ import pojos.Porposa;
  */
 @Path("/porposa")
 public class PorposerWebService {
+
     @POST
     @Path("/insertPorposer")
-    public Response register( MultivaluedMap<String, String> val) throws Exception {
+    public Response register(MultivaluedMap<String, String> val) throws Exception {
 
         PorposaDelegation ud = new PorposaDelegation();
         String price = val.getFirst("price");;
-       String startDate = val.getFirst("startDate");
-       String deadLine = val.getFirst("deadLine");
+        String startDate = val.getFirst("startDate");
+        String deadLine = val.getFirst("deadLine");
         String projectId = val.getFirst("pId");
         String SuplierId = val.getFirst("uId");
-       String projectStatus = "applying";
+        String projectStatus = "applying";
         Boolean output = ud.delegateInsert(price, startDate, deadLine, projectId, SuplierId, projectStatus);
         JSONObject outputJsonObj1 = new JSONObject();
         if (output == true) {
@@ -49,18 +48,23 @@ public class PorposerWebService {
         }
         return Response.status(200).entity(outputJsonObj1).build();
     }
-    
-     @GET
-    @Path("/getProjectById")
-    public Response projectById(@QueryParam("projectId") int projectId) throws Exception {
+
+    @GET
+    @Path("/getPorposals")
+    public Response projectById(@QueryParam("pId") int projectId) throws Exception {
+        boolean flag = false;
         PorposaDelegationInt porposaDelegationInt = new PorposaDelegation();
         ArrayList<Porposa> porposa = porposaDelegationInt.delegateSelectPorposaHQL(projectId);
         Gson g = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().serializeNulls().create();
         Map<String, Object> map = new HashMap();
-        map.put("satatus", true);
+        if (porposa.size() > 0) {
+
+            flag = true;
+
+        }
+        map.put("satatus", flag);
         map.put("projectPorposa", porposa);
         return Response.status(200).entity(g.toJson(map)).build();
     }
 
-   
 }

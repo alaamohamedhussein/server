@@ -5,8 +5,8 @@
  */
 package webservice;
 
-import businesslayer.businesslogic.TagsDelegation;
-import businesslayer.businesslogicinterface.TagsDelegationInt;
+import businesslogic.TagsDelegation;
+import businesslogicinterface.TagsDelegationInt;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.QueryParam;

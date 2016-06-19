@@ -30,9 +30,13 @@ public class Porposa implements java.io.Serializable {
     private Integer porpId;
     @Expose
     private Projectsforusers projectsforusers;
+    @Expose
     private Users users;
+    @Expose
     private int price;
+    @Expose
     private Date startDatePor;
+    @Expose
     private Date deadLinePor;
     @Expose
     private String statusOfPorposa;
@@ -80,7 +84,7 @@ public class Porposa implements java.io.Serializable {
         this.projectsforusers = projectsforusers;
     }
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "suplierIdPor", nullable = false)
     public Users getUsers() {
         return this.users;
@@ -128,7 +132,7 @@ public class Porposa implements java.io.Serializable {
         this.statusOfPorposa = statusOfPorposa;
     }
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "porposa")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "porposa")
     public Set<Details> getDetailses() {
         return this.detailses;
     }

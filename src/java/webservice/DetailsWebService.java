@@ -5,8 +5,8 @@
  */
 package webservice;
 
-import businesslayer.businesslogic.DetailsDelegation;
-import businesslayer.businesslogicinterface.DetailsDelegationInt;
+import businesslogic.DetailsDelegation;
+import businesslogicinterface.DetailsDelegationInt;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import java.util.HashMap;

@@ -270,7 +270,7 @@ public class Users implements java.io.Serializable {
         this.socialAccountses = socialAccountses;
     }
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "users")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "users")
     public Set<Portofolioforuser> getPortofolioforusers() {
         return this.portofolioforusers;
     }
@@ -279,7 +279,7 @@ public class Users implements java.io.Serializable {
         this.portofolioforusers = portofolioforusers;
     }
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "users")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "users")
     public Set<Projectsforusers> getProjectsforuserses() {
         return this.projectsforuserses;
     }
@@ -288,7 +288,7 @@ public class Users implements java.io.Serializable {
         this.projectsforuserses = projectsforuserses;
     }
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "users")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "users")
     public Set<Porposa> getPorposas() {
         return this.porposas;
     }

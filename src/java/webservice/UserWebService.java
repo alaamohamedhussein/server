@@ -5,10 +5,8 @@
  */
 package webservice;
 
-import businesslayer.businesslogic.CategoryDelegation;
-import businesslayer.businesslogic.UsersDelegation;
-import businesslayer.businesslogicinterface.CategoryDelegationInt;
-import businesslayer.businesslogicinterface.UsersDelegationInt;
+import businesslogic.UsersDelegation;
+import businesslogicinterface.UsersDelegationInt;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import java.io.File;
